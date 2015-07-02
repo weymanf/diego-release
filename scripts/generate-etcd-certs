@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+go get -v github.com/square/certstrap
+
+if [ "$#" -ne 1 ]; then
+  >&2 echo "Usage:
+  $0 /path/to/certs/dir"
+  exit 1
+fi
+
+depot_path=$1
+cmd="certstrap --depot-path ${depot_path}"
+
+if [[ -f ${depot_path}/diegoCA.key ]] && [[ -f ${depot_path}/diegoCA.crt ]]; then 
+  echo "Using existing CA keypair in '${depot_path}'."
+else
+  echo "No existing CA keypair found in '${depot_path}'. Creating a new CA keypair..."
+  rm -f ${depot_path}/diegoCA.{crt,key}
+  ${cmd} init --passphrase '' --common-name diegoCA
+fi
+
+echo "Removing non-CA keypairs in '${depot_path}'..."
+rm -f ${depot_path}/diegoETCD{Server,Peer,Client}.{crt,csr,key}
+
+${cmd} request-cert --passphrase '' --common-name diegoETCDServer --domain "*.etcd.service.consul,etcd.service.consul"
+${cmd} sign diegoETCDServer --CA diegoCA
+${cmd} request-cert --passphrase '' --common-name diegoETCDPeer --domain "*.etcd.service.consul,etcd.service.consul"
+${cmd} sign diegoETCDPeer --CA diegoCA
+${cmd} request-cert --passphrase '' --common-name diegoETCDClient
+${cmd} sign diegoETCDClient --CA diegoCA
