@@ -76,7 +76,7 @@
 [submodule "src/github.com/cloudfoundry-incubator/nsync"]
 	path = src/github.com/cloudfoundry-incubator/nsync
 	url = https://github.com/cloudfoundry-incubator/nsync
-	branch = master
+	branch = route-services-102098682
 [submodule "src/github.com/tedsuo/rata"]
 	path = src/github.com/tedsuo/rata
 	url = https://github.com/tedsuo/rata
@@ -88,7 +88,7 @@
 [submodule "src/github.com/cloudfoundry-incubator/inigo"]
 	path = src/github.com/cloudfoundry-incubator/inigo
 	url = https://github.com/cloudfoundry-incubator/inigo
-	branch = master
+	branch = route-services-102098682
 [submodule "src/github.com/GaryBoone/GoStats"]
 	path = src/github.com/GaryBoone/GoStats
 	url = https://github.com/GaryBoone/GoStats
@@ -108,7 +108,7 @@
 [submodule "src/github.com/cloudfoundry-incubator/route-emitter"]
 	path = src/github.com/cloudfoundry-incubator/route-emitter
 	url = https://github.com/cloudfoundry-incubator/route-emitter
-	branch = master
+	branch = route-services-102098682
 [submodule "src/github.com/pivotal-golang/lager"]
 	path = src/github.com/pivotal-golang/lager
 	url = https://github.com/pivotal-golang/lager
@@ -120,7 +120,7 @@
 [submodule "src/github.com/cloudfoundry-incubator/runtime-schema"]
 	path = src/github.com/cloudfoundry-incubator/runtime-schema
 	url = https://github.com/cloudfoundry-incubator/runtime-schema
-	branch = master
+	branch = route-services-102098682
 [submodule "src/github.com/cloudfoundry/dropsonde"]
 	path = src/github.com/cloudfoundry/dropsonde
 	url = https://github.com/cloudfoundry/dropsonde
