@@ -1,4 +1,6 @@
 # Cloud Foundry Diego [BOSH release]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fweymanf%2Fdiego-release.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fweymanf%2Fdiego-release?ref=badge_shield)
+
 
 ----
 This repo is a [BOSH](https://github.com/cloudfoundry/bosh) release for
@@ -520,3 +522,7 @@ ephemeral_disk:
   size: 174_080
   type: gp2
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fweymanf%2Fdiego-release.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fweymanf%2Fdiego-release?ref=badge_large)
